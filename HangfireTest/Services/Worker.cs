@@ -17,7 +17,7 @@ namespace HangfireTest.Services
         {
             if (!await _semaphoreSlim.WaitAsync(TimeSpan.FromSeconds(10)))
             {
-                _logger.LogInformation("La instancia pasada aun no termina");
+                _logger.LogInformation("Previous instance has not yet finish, skipping");
                 return;
             }
             var guid = Guid.NewGuid();
