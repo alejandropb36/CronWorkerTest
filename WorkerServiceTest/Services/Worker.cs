@@ -1,4 +1,4 @@
-namespace WorkerServiceTest
+namespace WorkerServiceTest.Services
 {
     public class Worker : BackgroundService
     {
@@ -14,7 +14,7 @@ namespace WorkerServiceTest
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(5000, stoppingToken);
+                await Task.Delay(60000, stoppingToken);
             }
         }
     }
