@@ -15,9 +15,9 @@ namespace SimpleCronWorkerServiceTest.Services
         protected override async Task DoWork(CancellationToken cancellationToken)
         {
             var guid = Guid.NewGuid();
-            _logger.LogInformation("Running Worker1 Task:{0}... at {1}", guid, DateTime.UtcNow);
+            _logger.LogInformation("Worker1 at {date} - Task:{guid} -----> Runing", DateTime.UtcNow, guid);
             await Task.Delay(5000);
-            _logger.LogWarning("Finished Worker1 Task:{0}... at {1}", guid, DateTime.UtcNow);
+            _logger.LogInformation("Worker1 at {date} - Task:{guid} -----> Finished", DateTime.UtcNow, guid);
         }
     }
 }
